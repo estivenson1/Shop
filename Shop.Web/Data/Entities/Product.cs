@@ -33,5 +33,20 @@
 
         public User User { get; set; }
 
+        public string ImageFullPath
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(this.ImageUrl))
+                {
+                    return null;
+                }
+                //https://shopeov.azurewebsites.net
+                //return $"https://shopzulu.azurewebsites.net{this.ImageUrl.Substring(1)}";
+                return $"https://shopeov.azurewebsites.net{this.ImageUrl.Substring(1)}";
+            }
+        }
+
+
     }
 }

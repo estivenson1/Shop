@@ -23,7 +23,7 @@
         // GET: Products
         public IActionResult GetProducts()
         {
-            return Ok(this.productRepository.GetAll());
+            return Ok(this.productRepository.GetAllWithUsers());
         }
 
         //// GET: Products/Details/5
