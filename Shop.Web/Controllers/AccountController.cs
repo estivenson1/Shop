@@ -1,27 +1,24 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
-using Microsoft.IdentityModel.Tokens;
-using Shop.Web.Data.Entities;
-using Shop.Web.Helpers;
-using Shop.Web.Models;
-using System;
-using System.Collections.Generic;
-using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
-using System.Security.Claims;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Shop.Web.Controllers
+﻿namespace Shop.Web.Controllers
 {
+    using Microsoft.AspNetCore.Identity;
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.Extensions.Configuration;
+    using Microsoft.IdentityModel.Tokens;
+    using Shop.Web.Data.Entities;
+    using Shop.Web.Helpers;
+    using Shop.Web.Models;
+    using System;
+    using System.IdentityModel.Tokens.Jwt;
+    using System.Linq;
+    using System.Security.Claims;
+    using System.Text;
+    using System.Threading.Tasks;
 
     /*
      * UserManager
      * IConfiguration
      */
-    public class AccountController: Controller
+    public class AccountController : Controller
     {
 
         private readonly IUserHelper userHelper;
@@ -241,6 +238,10 @@ namespace Shop.Web.Controllers
             return this.BadRequest();
         }
 
+        public IActionResult NotAuthorized()
+        {
+            return this.View();
+        }
 
 
     }
