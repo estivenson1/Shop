@@ -19,7 +19,8 @@
         public string ImageUrl { get; set; }
 
         [Display(Name = "Last Purchase")]
-        public DateTime LastPurchase { get; set; }
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}", ApplyFormatInEditMode = true)]
+        public DateTime? LastPurchase { get; set; }
 
         //Cuando se coloca el signo ? al tipo de dato singnifica que el campo puede recibir null
         [Display(Name = "Last Sale")]
